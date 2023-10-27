@@ -5,9 +5,9 @@
 class Enemigo : public Dibujo
 {
 private:
-int x, y;
+int x;
 public:
-    Enemigo(int x, int y) : Dibujo("Enemigo") 
+    Enemigo() : Dibujo("Enemigo") 
     {
 
     }

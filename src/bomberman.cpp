@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 {
     NeoBomberman *NB = new NeoBomberman(5,5);
     Ventana *V = new Ventana();
-    Enemigo *E = new Enemigo(20,20);
+    Enemigo *E = new Enemigo();
     Bomba *B = new Bomba(NB->LeerPosicion());
     
     list<Dibujo *> dibujos;
