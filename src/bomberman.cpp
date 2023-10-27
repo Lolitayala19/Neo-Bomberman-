@@ -12,21 +12,20 @@
 
 using namespace std;
 
-
 int main(int argc, char const *argv[])
 {
-    NeoBomberman *NB = new NeoBomberman(5,5);
+    NeoBomberman *NB = new NeoBomberman(5, 5);
     Ventana *V = new Ventana();
     Enemigo *E = new Enemigo();
     Bomba *B = new Bomba(NB->LeerPosicion());
-    
+
     list<Dibujo *> dibujos;
 
     dibujos.push_back(NB);
     dibujos.push_back(E);
 
-
     list<Actualizable *> actualizables;
+    while(true){
         int key = getch();
         if (key == 'a' || key == KEY_LEFT)
         {
@@ -43,7 +42,7 @@ int main(int argc, char const *argv[])
         }
         V->Dibujar(dibujos);
         V->Actualizar(actualizables);
-    
+    }
+
     return 0;
 }
-    
