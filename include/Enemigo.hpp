@@ -5,11 +5,12 @@
 class Enemigo : public Dibujo
 {
 private:
-int x;
+int x,y;
 public:
-    Enemigo() : Dibujo("Enemigo") 
+    Enemigo(int x, int y) : Dibujo("Enemigo") 
     {
-
+    this->posicion.DesplazarX(x);
+    this->posicion.DesplazarY(y);
     }
     ~Enemigo() 
     {

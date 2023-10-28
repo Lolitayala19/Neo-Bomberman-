@@ -9,6 +9,7 @@
 #include <curses.h>
 #include <Enemigo.hpp>
 #include <Bomba.hpp>
+#include <BombaExplotada.hpp>
 
 using namespace std;
 
@@ -16,8 +17,8 @@ int main(int argc, char const *argv[])
 {
     NeoBomberman *NB = new NeoBomberman(5, 5);
     Ventana *V = new Ventana();
-    Enemigo *E = new Enemigo();
-    Bomba *B = new Bomba(NB->LeerPosicion());
+    Enemigo *E = new Enemigo(100,2);
+   
 
     list<Dibujo *> dibujos;
 
@@ -25,7 +26,8 @@ int main(int argc, char const *argv[])
     dibujos.push_back(E);
 
     list<Actualizable *> actualizables;
-    while(true){
+    while(true)
+    {
         int key = getch();
         if (key == 'a' || key == KEY_LEFT)
         {
@@ -37,8 +39,14 @@ int main(int argc, char const *argv[])
         }
         if (key == ' ')
         {
+            Bomba *B = new Bomba(NB->LeerPosicion());
+            BombaExplotada *BE = new BombaExplotada();
             dibujos.push_back(B);
-            actualizables.push_back(B);
+            if(key == 'M')
+            {
+             
+            }
+    
         }
         V->Dibujar(dibujos);
         V->Actualizar(actualizables);

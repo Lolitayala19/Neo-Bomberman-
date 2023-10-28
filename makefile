@@ -9,3 +9,7 @@ bin/bomberman: src/bomberman.cpp include/*
 runbomberman : bin/bomberman
 	./bin/bomberman
 
+clean: bin/bomberman
+	rm bin/bomberman
+
+
