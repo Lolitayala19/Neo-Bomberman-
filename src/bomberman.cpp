@@ -37,15 +37,18 @@ int main(int argc, char const *argv[])
         {
             NB->CambiarDireccion();
         }
+        if (key == 'w' || key == KEY_UP)
+        {
+            NB->AvanzarY();
+        }
+        if (key == 's' || key == KEY_DOWN)
+        {
+          NB->CambiarDireccionY();  
+        }
         if (key == ' ')
         {
             Bomba *B = new Bomba(NB->LeerPosicion());
-            BombaExplotada *BE = new BombaExplotada();
             dibujos.push_back(B);
-            if(key == 'M')
-            {
-             
-            }
     
         }
         V->Dibujar(dibujos);

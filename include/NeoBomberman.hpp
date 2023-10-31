@@ -29,6 +29,14 @@ public:
     {
         this->posicion.DesplazarX(1);
     }
+    void AvanzarY()
+    {
+        this->posicion.DesplazarY(1);
+    }
+    void CambiarDireccionY()
+    {
+        this->posicion.CambiarDireccionY();
+    }
     void CambiarDireccion()
     {
         this->posicion.CambiarDireccionX();
