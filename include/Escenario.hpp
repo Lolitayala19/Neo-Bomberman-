@@ -1,11 +1,13 @@
-#ifndef __ESCENARIO_H__
-#define __ESCENARIO_H__
+# pragma once
+
 #include <ctime>
 #include <stdlib.h>
 #define filas 15
 #define columnas 17
+#include "iostream"
+#include "string"
 
-using namespace System::Drawing
+using namespace std;
 
 class Escenario
 {
@@ -51,7 +53,7 @@ public:
         }
     }
 
-    void DibujarMatriz(Graphics^g, Bitmap^bmpSolido, Bitmap^bmpDestruible)
+    void DibujarMatriz()
     {
     int X=0,Y=0;
 
@@ -61,12 +63,12 @@ public:
         {
             if(matriz[i][j]==0 || matriz[i][j]==2)
             {
-            g->DrawImage(bmpSolido,X,Y,50,50);
+            cout<<"P"<<endl;
             }
             else
             {
             if(matriz[i][j]==3 || matriz[i][j]==2)
-            g->DrawImage(bmpDestruible,X,Y,50,50);
+            cout<<"O"<<endl;
             }
             X+=50;
         }
@@ -78,4 +80,4 @@ public:
     }
     }
 };
-#endif
+

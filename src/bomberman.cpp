@@ -1,7 +1,5 @@
 #include <iostream>
-#include <NeoBomberman.hpp>
 #include <unistd.h>
-#include "Ventana.hpp"
 #include <Dibujo.hpp>
 #include <Actualizable.hpp>
 #include <list>

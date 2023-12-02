@@ -6,7 +6,7 @@ runneobomberman: src/RunNeoBomberman.cpp
 	g++ src/NeoBomberman.cpp -o src/NeoBomberman -I include $(CXXFLAGS)
 
 bin/bomberman: src/bomberman.cpp include/*
-	c++ src/bomberman.cpp -o bin/bomberman -I include -l curses
+	g++ src/bomberman.cpp -o bin/bomberman -I include -l curses
 
 runbomberman : bin/bomberman
 	./bin/bomberman

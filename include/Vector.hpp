@@ -25,12 +25,12 @@ public:
     }
     void CambiarDireccionX()
     {
-        this->direccion_x *= -1;
+        this->x -= x *this->direccion_x
     }
 
     void CambiarDireccionY()
     {
-        this->direccion_y *= -1;
+        this->y -= y *this->direccion_y
     }
 
     void DesplazarX(unsigned int x)
