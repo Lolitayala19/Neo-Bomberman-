@@ -10,7 +10,7 @@ runbomberman : bin/bomberman
 	./bin/bomberman
 
 bin/personaje: src/personaje.cpp include/*
-	g++ src/personaje.cpp -o bin/personaje -I include -lsfml-graphics -lsfml.window -lsfml-system -lsfml-audio
+	c++ src/personaje.cpp -o bin/personaje -I include -lsfml-graphics -lsfml.window -lsfml-system -lsfml-audio
 
 runpersonaje: bin/personaje
 	./bin/personaje
