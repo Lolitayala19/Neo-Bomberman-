@@ -9,7 +9,6 @@
 #include <curses.h>
 #include <Enemigo.hpp>
 #include <Bomba.hpp>
-#include <BombaExplotada.hpp>
 
 using namespace std;
 
