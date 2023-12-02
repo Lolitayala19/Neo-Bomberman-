@@ -1,5 +1,7 @@
 # Neo Bomberman
 
+By Eduardo Correa Flores 22310172 Ingenieria Mecatronica 3er Semestre
+
 Neo Bomberman es uno de los dos videojuegos de Bomberman desarrollados por Hudson Soft para ser lanzados en el hardware de Neo Geo, siendo Panic Bomber el otro juego.
 ![Imagen Portada](/Imagenes/Primer%20imagen.png)
 
