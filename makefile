@@ -1,4 +1,6 @@
 CXX = x86_64-w64-mingw32-g++
+SDL_INCLUDE = -IC:\msys64\mingw64\include\SDL2 -LC:\msys64\mingw64\lib
+CXXFLAGS = $(SDL_INCLUDE) -w Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
 
 runneobomberman: src/RunNeoBomberman.cpp
 	g++ src/NeoBomberman.cpp -o src/NeoBomberman -I include $(CXXFLAGS)
@@ -10,10 +12,10 @@ runbomberman : bin/bomberman
 	./bin/bomberman
 
 bin/personaje: src/personaje.cpp include/*
-	c++ src/personaje.cpp -o bin/personaje -I include -lsfml-graphics -lsfml.window -lsfml-system -lsfml-audio
+	g++ $< -o $@ -I include -lsfml-graphics -lsfml.window -lsfml-system -lsfml-audio
 
 runpersonaje: bin/personaje
-	./bin/personaje
+	./$<
 	
 clean: bin/bomberman
 	rm bin/bomberman

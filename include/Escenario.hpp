@@ -1,11 +1,12 @@
-#pragma once
-#define filas 15
-#define columnas 17
-#define __ESCENARIO_H__
 #ifndef __ESCENARIO_H__
+#define __ESCENARIO_H__
 #include <ctime>
 #include <stdlib.h>
-using namespace System::Drawing;
+#define filas 15
+#define columnas 17
+
+using namespace System::Drawing
+
 class Escenario
 {
 private:
@@ -18,7 +19,7 @@ public:
     void Generarmatriz() 
     {
         srand(time(NULL));
-        for (i=0; i<filas; i++)
+        for (int i=0; i<filas; i++)
         {
             matriz[i] = new int[columnas];
         for (int j=0; j<filas; j++)
@@ -49,15 +50,32 @@ public:
         }
         }
     }
-    void PintarBase(Graphics^g,Bitmap^bmpBase)
-    int X,Y=0;
+
+    void DibujarMatriz(Graphics^g, Bitmap^bmpSolido, Bitmap^bmpDestruible)
+    {
+    int X=0,Y=0;
+
     for(int i=0; i<filas; i++)
     {
-        for(int j=o; j<columnas; j++)
+        for(int j=0; j<columnas; j++)
         {
             if(matriz[i][j]==0 || matriz[i][j]==2)
-            g->DrawImage(bmpBase,X,Y,50,50)
+            {
+            g->DrawImage(bmpSolido,X,Y,50,50);
+            }
+            else
+            {
+            if(matriz[i][j]==3 || matriz[i][j]==2)
+            g->DrawImage(bmpDestruible,X,Y,50,50);
+            }
             X+=50;
         }
+        Y+=50;
+    }
+    int **getmatriz()
+    {
+        return matriz;
+    }
     }
 };
+#endif
