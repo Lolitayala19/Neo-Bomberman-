@@ -1,25 +1,24 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include<Vector.hpp>
 
-class Personajearriba
+class Enemigo
 {
 private:
     /* data */
 public:
-    Personajearriba(/* args */) 
+    Enemigo(/* args */) 
     {
 
     }
-    int Caminararriba()
+    int Dibujarenemigo()
     {
-        // Crear una ventana
+            // Crear una ventana
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sprite Animado");
 
     // Cargar la imagen desde un archivo
     sf::Texture texture;
-    if (!texture.loadFromFile("Imagenes/Personaje.png"))
+    if (!texture.loadFromFile("Imagenes/Enemigos.png"))
     {
         // Manejo de error si no se puede cargar la imagen
         return -1;
@@ -33,8 +32,8 @@ public:
     float frameTime = 0.1f; // Tiempo entre cada frame en segundos
     int currentFrame = 0;
     int numFrames = 7; // Número total de frames en la animación
-    int frameWidth = 20;
-    int frameHeight = 26;
+    int frameWidth = 21;
+    int frameHeight = 25;
 
     while (window.isOpen())
     {
@@ -54,10 +53,10 @@ public:
             // Calcular el cuadro que se debe de ver
             currentFrame = (currentFrame + 1) % numFrames;
             // Calcular cordenadas del cuadro de recorte del sprite
-            int arriba = 98;
-            int izquierda = (currentFrame * 20)+ 6;
-            int ancho = 20;
-            int alto = 26;
+            int arriba = 292;
+            int izquierda = (currentFrame * 21)+ 11;
+            int ancho = 21;
+            int alto = 25;
             // Construir rectangulo de recorte
             sf::IntRect cordenadas = sf::IntRect(izquierda,arriba,ancho,alto);
             // Agregar rectangulo de recorte al sprite
@@ -71,9 +70,9 @@ public:
         window.display();
     }
 
-    return 0;  
+    return 0;
     }
-    ~Personajearriba() 
+    ~Enemigo() 
     {
 
     }

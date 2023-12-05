@@ -16,12 +16,17 @@ public:
     {
 
     }
+    Vector V;
+    Personajearriba *Pa = New Personajearriba;
+    Personajeabajo *Pab = New Personajeabajo;
+    Personajeizquierda *Pi = New Personajeizquierda;
+    Personajederecha *Pd = New Personajederecha;
     void Sentido()
     {
     int key = getch();
         if (key == 'a' || key == KEY_LEFT)
         {
-            s
+        *Pa->
         }
         if (key == 'd' || key == KEY_RIGHT)
         {
