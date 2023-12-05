@@ -1,6 +1,5 @@
 #pragma once
 
-
 class Vector
 {
 private:
@@ -25,12 +24,12 @@ public:
     }
     void CambiarDireccionX()
     {
-        this->x -= x *this->direccion_x
+        this->x -= x *this->direccion_x;
     }
 
     void CambiarDireccionY()
     {
-        this->y -= y *this->direccion_y
+        this->y -= y *this->direccion_y;
     }
 
     void DesplazarX(unsigned int x)

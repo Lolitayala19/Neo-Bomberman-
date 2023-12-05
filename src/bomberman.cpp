@@ -1,12 +1,8 @@
 #include <iostream>
 #include <unistd.h>
-#include <Dibujo.hpp>
-#include <Actualizable.hpp>
 #include <list>
 #include <fstream>
 #include <curses.h>
-#include <Enemigo.hpp>
-#include <Bomba.hpp>
 
 using namespace std;
 
@@ -41,12 +37,6 @@ int main(int argc, char const *argv[])
         if (key == 's' || key == KEY_DOWN)
         {
           NB->CambiarDireccionY();  
-        }
-        if (key == ' ')
-        {
-            Bomba *B = new Bomba(NB->LeerPosicion());
-            dibujos.push_back(B);
-    
         }
         V->Dibujar(dibujos);
         V->Actualizar(actualizables);

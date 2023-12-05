@@ -1,8 +1,19 @@
+#pragma once
+
 #include <SFML/Graphics.hpp>
 
-int main()
+class Personajeizquierda
 {
-    // Crear una ventana
+private:
+    /* data */
+public:
+    Personajeizquierda(/* args */) 
+    {
+        
+    }
+    int Caminarizquierda()
+    {
+                // Crear una ventana
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sprite Animado");
 
     // Cargar la imagen desde un archivo
@@ -42,7 +53,7 @@ int main()
             // Calcular el cuadro que se debe de ver
             currentFrame = (currentFrame + 1) % numFrames;
             // Calcular cordenadas del cuadro de recorte del sprite
-            int arriba = 70;
+            int arriba = 154;
             int izquierda = (currentFrame * 20)+ 6;
             int ancho = 20;
             int alto = 26;
@@ -59,5 +70,10 @@ int main()
         window.display();
     }
 
-    return 0;
-}
+    return 0;  
+    }
+    ~Personajeizquierda() 
+    {
+
+    }
+};

@@ -1,8 +1,19 @@
+#pragma once
+
 #include <SFML/Graphics.hpp>
 
-int main()
+class Personajeabajo
 {
-    // Crear una ventana
+private:
+    /* data */
+public:
+    Personajeabajo(/* args */) 
+    {
+
+    }
+    int Caminarabajo()
+    {
+        // Crear una ventana
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sprite Animado");
 
     // Cargar la imagen desde un archivo
@@ -60,4 +71,6 @@ int main()
     }
 
     return 0;
-}
+    }
+    ~Personajeabajo() {}
+};
