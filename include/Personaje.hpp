@@ -2,20 +2,20 @@
 
 #include<SFML/Graphics.hpp>
 
-class Obstaculo
+class Personaje
 {
 private:
     /* data */
 public:
-    Obstaculo(/* args */) 
+    Personaje(/* args */) 
     {
 
     }
-    void Obstaculofijo()
+    void Caminararriba()
     {
-        
+    
     }
-    ~Obstaculo() 
+    ~Personaje() 
     {
 
     }

@@ -1,0 +1,33 @@
+@startuml BomberMan
+class Personaje
+{
+move:void
+draw:void
+update:void
+}
+class Enemigo
+{
+move:void
+draw:void
+update:void
+}
+class Bomba
+{
+move:void
+draw:void
+update:void
+}
+
+Personaje o-- Enemigo
+Personaje o-- Bomba
+Enemigo -|> Personaje
+Personaje o-- move
+Enemigo o-- move
+Personaje -|> draw
+Enemigo -|> draw
+Bomba -|> draw
+Enemigo o-- update
+Personaje o-- update
+Bomba o-- update
+
+

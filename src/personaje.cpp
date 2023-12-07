@@ -2,6 +2,8 @@
 #include <SFML/Audio.hpp>
 #include <Direccion.hpp>
 
+sf::Color none = sf::Color(0,0,0,0); //Color nulo
+
 class Bomba
 {
 public:
@@ -57,13 +59,14 @@ public:
 
     Personaje(sf::Vector2f position, sf::Color color)
     {
-        shape.setSize(sf::Vector2f(1, 1));
+        shape.setSize(sf::Vector2f(1,1));
         shape.setPosition(position); // Posición inicial cuadro
-        shape.setFillColor(color);
+        shape.setFillColor(none);
 
+       
         // Cargar la imagen desde un archivo
         
-        if (!texture.loadFromFile("./Imagenes/PERSONAJES.png"))
+        if (!texture.loadFromFile("./Imagenes/correa.png"))
         {
         
         }
@@ -89,7 +92,7 @@ public:
         if (clock.getElapsedTime().asSeconds() >= frameTime)
         {
             currentFrame = (currentFrame + 1) % numFrames;
-            sprite.setTextureRect(sf::IntRect((currentFrame * 21) + 0, 0, 21, 26));
+            sprite.setTextureRect(sf::IntRect((currentFrame * 20) + 6, 4, 20, 26));
             clock.restart();
         }
     }
@@ -108,16 +111,16 @@ private:
 class Enemigo
 {
 public:
-
+    sf::Color none = sf::Color(0,0,0,0); //Color nulo
     Enemigo(sf::Vector2f position, sf::Color color)
     {
-        shape.setSize(sf::Vector2f(1, 1));
+        shape.setSize(sf::Vector2f(1,1));
         shape.setPosition(position); // Posición inicial cuadro
-        shape.setFillColor(color);
+        shape.setFillColor(none);
 
         // Cargar la imagen desde un archivo
         
-        if (!texture.loadFromFile("./Imagenes/ENEMIGO1.png"))
+        if (!texture.loadFromFile("./Imagenes/Cosaverde.png"))
         {
         
         }
@@ -141,8 +144,12 @@ public:
         // Actualizar el frame de la animación
         if (clock.getElapsedTime().asSeconds() >= frameTime)
         {
+            int ancho = 16;
+            int alto = 19;
+            int esquinaSuperior = 210;
+            int esquinaIzquierda = 7;
             currentFrame = (currentFrame + 1) % numFrames;
-            sprite.setTextureRect(sf::IntRect((currentFrame * 19) + 0, 0, 19, 28));
+            sprite.setTextureRect(sf::IntRect((currentFrame * ancho) + esquinaIzquierda, esquinaSuperior, ancho, alto));
             clock.restart();
         }
     }
@@ -155,12 +162,27 @@ private:
     float frameTime = 0.2; // Tiempo entre cada frame en segundos
     int currentFrame = 0;
     int numFrames = 7; // Número total de frames en la animación
-    int frameWidth = 19;
-    int frameHeight = 28;
+    int frameWidth = 16;
+    int frameHeight = 19;
 };
 
 int main()
 {
+        // Cargar una fuente de texto
+    sf::Font font2;
+    if (!font2.loadFromFile("./assets/fonts/Letra.ttf"))
+    {
+        // Manejar el error si no se puede cargar la fuente
+        return -1;
+    }
+    // Crear un objeto de texto LOTR
+    sf::Text text2;
+    text2.setFont(font2);
+    text2.setString("SCORE (0)");
+    text2.setCharacterSize(10);
+    text2.setPosition(140, 5);
+    text2.setFillColor(sf::Color::Black);
+
     sf::Texture texture;
     if (!texture.loadFromFile("./Imagenes/Mapa.png"))
     {
@@ -227,9 +249,10 @@ int main()
         window.clear();
         window.draw(sprite);
         Bomberman.draw(window);
+        window.draw(text2);
         Medusa.draw(window);
       
-       window.display();
+        window.display();
 
         if (music.getStatus() != sf::Music::Playing)
         {
