@@ -1,0 +1,63 @@
+@startuml Bomber Man
+class Bomberman
+class Enemigo 
+class ObstaculoDestruible
+class ObstaculoFijo
+class Bomba
+class Patin 
+class Potenciador 
+class Mapa 
+class Pantalla
+class Interfaz 
+class Puntaje 
+class Personaje
+class Guante 
+class Amigo 
+class Portal 
+class Mundo 
+class Nivel
+class MejoraBomba
+class Vida
+class Apariencia 
+class EnemigoUsable
+class LiderMundo
+class BombaControlada
+
+
+Bomberman -|> Personaje
+Bomberman o-- Bomba
+Bomberman o-- Enemigo
+Bomberman *-- Vida 
+Bomberman o-- Nivel
+Bomberman o-- EnemigoUsable
+Bomberman o-- LiderMundo
+Bomberman o-- BombaControlada
+Bomberman o-- Patin
+Bomberman o-- Potenciador
+Bomberman o-- Mapa
+Bomberman o-- Guante
+Bomberman o-- Amigo
+Bomberman o-- Portal
+Interfaz o-- ObstaculoFijo
+Bomberman o-- ObstaculoDestruible
+Enemigo -|> Personaje
+EnemigoUsable -|> Personaje
+LiderMundo -|> Personaje
+Amigo -|> Personaje 
+Amigo o-- Bomba 
+Bomberman o-- Portal 
+Bomberman o-- MejoraBomba
+Personaje *-- Apariencia
+Pantalla o-- Interfaz
+Guante -|> Potenciador
+MejoraBomba -|> Potenciador
+Patin -|> Potenciador
+Mapa -|> Potenciador
+Mundo o-- Nivel
+Interfaz o-- Vida
+Interfaz o-- Puntaje
+BombaControlada -|> Potenciador
+
+@enduml
+
+

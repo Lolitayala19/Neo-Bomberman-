@@ -17,5 +17,5 @@ bin/personaje: src/personaje.cpp include/*
 runpersonaje: bin/personaje
 	./$<
 	
-clean: bin/bomberman
-	rm bin/bomberman
+clean: bin/personaje
+	rm bin/personaje

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include<Vector.hpp>
 
 class Personajearriba
 {

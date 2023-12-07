@@ -1,5 +1,6 @@
 # pragma once
 
+#include<SFML/Graphics.hpp>
 #include <ctime>
 #include <stdlib.h>
 #define filas 15
